@@ -1,13 +1,14 @@
 <!--  -->
 <template>
     <div class="myAside">
-        <div class="logo">阿里巴巴后台管理系统</div>
+        <div class="logo" v-if="logoShow">阿里巴巴后台管理系统</div>
         <!-- 菜单组件 -->
         <a-menu
             :defaultSelectedKeys="selectedKeys"
+            :inlineCollapsed="collapsed"
+            :openKeys.sync="openKeys"
             mode="inline"
             theme="dark"
-            :openKeys.sync="openKeys"
         >
             <template v-for="item in routeData">
                 <!-- 有children的路由 -->
@@ -16,6 +17,7 @@
                     v-if="item.meta.unfold"
                 >
                     <span slot="title">
+                        <a-icon type="folder" />
                         <span>{{item.meta.name}}</span>
                     </span>
                     <template v-for="childrenItem in item.children">
@@ -31,6 +33,7 @@
                     @click="gotoRoute(item.name)"
                     v-else
                 >
+                    <a-icon type="folder" />
                     <span>{{item.meta.name}}</span>
                 </a-menu-item>
             </template>
@@ -39,6 +42,7 @@
 </template>
 
 <script>
+    import { mapState,mapGetters } from "vuex";
     export default {
         data() {
             return {
@@ -47,10 +51,15 @@
                 openKeys: [],
             };
         },
-
+        
+        computed: {
+            ...mapState(["collapsed","logoShow"]),
+            ...mapGetters(["collapsedText","collapsedText"]),
+        },
 
         created() {
             this.getMenuData()
+            console.log(this.collapsed,this.logoShow,this.collapsedText,this.collapsedText)
         },
 
         methods: {
@@ -82,7 +91,7 @@
 </script>
 <style lang="scss">
     .myAside {
-        width: 256px;
+        // width: 256px;
         min-height: 100vh; //使菜单高度填满屏幕
         background-color: #001529;
         .menuBtn {

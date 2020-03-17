@@ -3,7 +3,7 @@
  * @Autor: 王宏
  * @Date: 2020-03-16 15:12:45
  * @LastEditors: 王宏
- * @LastEditTime: 2020-03-16 15:13:03
+ * @LastEditTime: 2020-03-17 13:54:52
  -->
 <template>
     <div class="home">
@@ -20,9 +20,8 @@
 
         components: {},
 
-        computed: {},
-
-        created() { },
+        created() { 
+        },
 
         methods: {}
     }

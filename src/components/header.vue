@@ -1,12 +1,28 @@
+<!--
+ * @Description: 
+ * @Autor: 王宏
+ * @Date: 2020-03-17 09:53:23
+ * @LastEditors: 王宏
+ * @LastEditTime: 2020-03-17 16:49:15
+ -->
 <!--  -->
 <template>
     <div class="myHeader">
-        <div>马云</div>
-        <div style="margin:0 16px;color:blue">退出登录</div>
+        <a-button
+            @click="toggleCollapsed"
+            type="primary"
+        >
+            <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
+        </a-button>
+        <div class="myHeader-right">
+            <div>马云</div>
+            <div style="margin:0 16px;color:blue">退出登录</div>
+        </div>
     </div>
 </template>
 
 <script>
+    import { mapState, mapGetters, mapMutations,mapActions } from "vuex";
     export default {
         data() {
             return {
@@ -15,11 +31,24 @@
 
         components: {},
 
-        computed: {},
+        computed: {
+            ...mapState(["collapsed"]),
+        },
 
-        created() { },
+        created() {
+            console.log('changeShowState',this.changeShowState)
+         },
 
-        methods: {}
+        methods: {
+            ...mapMutations(['changeShowState']),
+            ...mapActions(['changeShowStateAsync']),
+            toggleCollapsed() {
+                // this.$store.commit('changeShowState')
+                // this.changeShowState()
+                // this.$store.dispatch('changeShowStateAsync')
+                this.changeShowStateAsync()
+            },
+        }
     }
 
 </script>
@@ -30,7 +59,12 @@
         font-size: 14px;
         box-shadow: 5px 0px 10px #ccc;
         display: flex;
+        padding: 0 24px;
+        justify-content: space-between;
         align-items: center;
-        justify-content: flex-end;
+        &-right {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 </style>

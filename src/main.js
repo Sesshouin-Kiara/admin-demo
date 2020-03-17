@@ -1,6 +1,14 @@
+/*
+ * @Description: 
+ * @Autor: 王宏
+ * @Date: 2020-03-17 09:53:23
+ * @LastEditors: 王宏
+ * @LastEditTime: 2020-03-17 11:09:05
+ */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store'
 
 import {
     Input,
@@ -22,5 +30,6 @@ Vue.config.productionTip = false
 
 new Vue({
     router,
+    store,
     render: h => h(App),
 }).$mount('#app')
