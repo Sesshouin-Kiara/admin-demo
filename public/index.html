@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- 图片资源在网页中不能正常显示，403禁止访问，把地址放到浏览器中就可以正常访问。原因是豆瓣有防盗链，添加<meta name="referrer" content="never">就好了 -->
+    <meta name="referrer" content="never">   
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>

@@ -9,6 +9,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import api from './api';
 
 import {
     Input,
@@ -16,6 +17,8 @@ import {
     Menu,
     Icon,
     Breadcrumb,
+    Table,
+    Tag,
 } from 'ant-design-vue';
 
 // Vue.component和Vue.use这里作用都是注册组件
@@ -25,6 +28,10 @@ Vue.use(Button)
 Vue.use(Menu)
 Vue.use(Icon)
 Vue.use(Breadcrumb)
+Vue.use(Table)
+Vue.use(Tag)
+
+Vue.prototype.$api = api;
 
 Vue.config.productionTip = false
 

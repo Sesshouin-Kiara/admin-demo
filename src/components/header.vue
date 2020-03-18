@@ -3,7 +3,7 @@
  * @Autor: 王宏
  * @Date: 2020-03-17 09:53:23
  * @LastEditors: 王宏
- * @LastEditTime: 2020-03-17 16:49:15
+ * @LastEditTime: 2020-03-17 17:51:58
  -->
 <!--  -->
 <template>
@@ -36,7 +36,6 @@
         },
 
         created() {
-            console.log('changeShowState',this.changeShowState)
          },
 
         methods: {
@@ -44,9 +43,9 @@
             ...mapActions(['changeShowStateAsync']),
             toggleCollapsed() {
                 // this.$store.commit('changeShowState')
-                // this.changeShowState()
+                this.changeShowState()
                 // this.$store.dispatch('changeShowStateAsync')
-                this.changeShowStateAsync()
+                // this.changeShowStateAsync()
             },
         }
     }

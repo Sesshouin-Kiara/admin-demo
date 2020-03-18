@@ -59,7 +59,7 @@
 
         created() {
             this.getMenuData()
-            console.log(this.collapsed,this.logoShow,this.collapsedText,this.collapsedText)
+            // console.log(this.collapsed,this.logoShow,this.collapsedText,this.collapsedText)
         },
 
         methods: {

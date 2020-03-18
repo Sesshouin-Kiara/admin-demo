@@ -19,13 +19,11 @@
             };
         },
 
-        components: {},
+        created() {
+        },
 
-        computed: {},
-
-        created() { },
-
-        methods: {}
+        methods: {
+        }
     }
 </script>
 

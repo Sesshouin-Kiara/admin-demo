@@ -14,6 +14,9 @@ import FrontEnd from './views/department/front-end'
 import BackEnd from './views/department/back-end'
 //设置
 import Setting from './views/setting'
+//电影
+import MovieTop250 from './views/movie/top250'
+
 
 // 告诉 Vue 使用 VueRouter
 Vue.use(VueRouter)
@@ -112,6 +115,29 @@ const router = new VueRouter({
                     meta: {
                         name: '后端开发部'
                     }
+                }
+            ]
+        },
+        {
+            path: '/movie',
+            name: 'movie',
+            component: Main,
+            meta: {
+                name: '电影管理',
+                unfold:true
+            },
+            redirect: {
+                name: 'movieTop250'
+            },
+            children: [
+                {
+                    path: 'movieTop250',
+                    name: 'movieTop250',
+                    meta: {
+                        name: 'Top250',
+                        auth: true,
+                    },
+                    component: MovieTop250
                 }
             ]
         },
