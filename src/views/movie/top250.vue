@@ -69,6 +69,7 @@
 
 <script>
     import axios from "axios";
+    import Utils from "@/Utils";
     export default {
         data() {
             return {
@@ -97,7 +98,7 @@
 
         created() {
             this.getList()
-            console.log(34567, this.$api.movie.getTop250)
+            console.log(3333,Utils)
         },
 
         methods: {
